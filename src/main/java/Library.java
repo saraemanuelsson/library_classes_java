@@ -24,4 +24,8 @@ public class Library {
         return books.contains(book);
     }
 
+    public Book removeBook(Book book){
+        return this.books.remove(this.books.indexOf(book));
+    }
+
 }

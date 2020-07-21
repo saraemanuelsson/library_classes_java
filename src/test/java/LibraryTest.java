@@ -43,4 +43,10 @@ public class LibraryTest {
         Book outOfStockBook = new Book("Lord of the Rings", "Tolkien", "Fiction");
         assertFalse(library.checkIfBookInStock(outOfStockBook));
     }
+
+    @Test
+    public void canRemoveBook(){
+        library.removeBook(book);
+        assertEquals(0, library.bookCount());
+    }
 }
