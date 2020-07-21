@@ -7,12 +7,14 @@ public class LibraryTest {
 
     private Library library;
     private Book book;
+    private Book outOfStockBook;
 
     @Before
     public void before(){
         library = new Library(100);
         book = new Book("Harry Potter", "Rowling", "Fiction");
         library.addBook(book);
+        outOfStockBook = new Book("Lord of the Rings", "Tolkien", "Fiction");
     }
 
     @Test
@@ -40,7 +42,6 @@ public class LibraryTest {
 
     @Test
     public void cantFindBookThatsOutOfStock(){
-        Book outOfStockBook = new Book("Lord of the Rings", "Tolkien", "Fiction");
         assertFalse(library.checkIfBookInStock(outOfStockBook));
     }
 

@@ -25,7 +25,10 @@ public class Library {
     }
 
     public Book removeBook(Book book){
-        return this.books.remove(this.books.indexOf(book));
+        if (checkIfBookInStock(book)) {
+            return this.books.remove(this.books.indexOf(book));
+        }
+        return null;
     }
 
 }

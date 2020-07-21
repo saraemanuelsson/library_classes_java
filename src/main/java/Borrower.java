@@ -16,4 +16,12 @@ public class Borrower {
         this.books.add(book);
     }
 
+    public void loanBook(Library library, Book book){
+        Book bookToBorrow = library.removeBook(book);
+        if (bookToBorrow != null){
+            addBook(bookToBorrow);
+        }
+
+    }
+
 }
