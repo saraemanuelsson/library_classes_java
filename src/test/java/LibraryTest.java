@@ -17,12 +17,12 @@ public class LibraryTest {
 
     @Test
     public void hasBooks(){
-        assertEquals(1, library.bookStock());
+        assertEquals(1, library.bookCount());
     }
 
     @Test
     public void canAddBook(){
         library.addBook(book);
-        assertEquals(2, library.bookStock());
+        assertEquals(2, library.bookCount());
     }
 }
