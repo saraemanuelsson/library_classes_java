@@ -50,4 +50,17 @@ public class LibraryTest {
         library.removeBook(book);
         assertEquals(0, library.bookCount());
     }
+
+    @Test
+    public void hasBooksSortedByGenre(){
+        assertEquals(1, library.getBooksByGenre("Fiction"));
+    }
+
+    @Test
+    public void canRemoveBookFromGenreList(){
+        library.addBook(book);
+        library.addBook(book);
+        library.removeBook(book);
+        assertEquals(2, library.getBooksByGenre("Fiction"));
+    }
 }
