@@ -20,4 +20,8 @@ public class Library {
         }
     }
 
+    public boolean checkIfBookInStock(Book book){
+        return books.contains(book);
+    }
+
 }

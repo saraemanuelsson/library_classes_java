@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LibraryTest {
 
@@ -31,5 +31,16 @@ public class LibraryTest {
         Library fullLibrary = new Library(0);
         fullLibrary.addBook(book);
         assertEquals(0, fullLibrary.bookCount());
+    }
+
+    @Test
+    public void canFindBook(){
+        assertTrue(library.checkIfBookInStock(book));
+    }
+
+    @Test
+    public void cantFindBookThatsOutOfStock(){
+        Book outOfStockBook = new Book("Lord of the Rings", "Tolkien", "Fiction");
+        assertFalse(library.checkIfBookInStock(outOfStockBook));
     }
 }
